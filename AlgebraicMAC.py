@@ -1,9 +1,10 @@
 import random
 
-from binascii import hexlify, unhexlify
+from binascii import hexlify
 
 
 def string_to_int(m):
+    # helper function which converts ascii strings to their integer representation to be used in the MAC calculation
 
     m = m.encode()
     m = hexlify(m)
