@@ -100,9 +100,9 @@ def makeG():
             possPrimes.append(n)
             if len(possPrimes) == 10:
                 break
-    prime1 = random.choice(possPrimes)
-    prime2 = random.choice(possPrimes)
-    return prime1, prime2
+    prime = random.choice(possPrimes)
+
+    return prime
 
 m = makeG()
 print(m)

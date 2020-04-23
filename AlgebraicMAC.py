@@ -38,26 +38,26 @@ def keyGen(q):
     return x0, x1
 
 
-def mac(sk, m, G):
+def mac(sk, m, q):
     # produces a MAC from the secret key and P
     # choose random U ∈ G, output σ = (U,U^(x0+x1m))
-    u = random.randint(1, G)
+    u = random.randint(1, q)
 
     m = int(string_to_int(m))
     x0 = sk[0]
     x1m = sk[1] * m
     sigma = [0, 0]
     sigma[0] = u
-    sigma[1] = pow(u, (x0 + x1m), G)
+    sigma[1] = pow(u, (x0 + x1m), q)
     return sigma
 
 
-def verify(sk, u, u2, m, G):
+def verify(sk, u, u2, m, q):
     # Verify(sk,(U,U'),m): recompute U'' = U^x0+x1m, output “valid” if U'' = U', and “invalid” otherwise.
     x0 = sk[0]
     m = int(string_to_int(m))
     x1m = sk[1] * m
-    newU = pow(u, (x0 + x1m), G)
+    newU = pow(u, (x0 + x1m), q)
     if newU == u2:
         return 'This MAC is valid'
     else:

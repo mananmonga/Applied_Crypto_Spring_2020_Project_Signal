@@ -9,7 +9,10 @@ How to run:
 
     3. m = "Hello World!" is the hardcoded strong we choose to MAC as an example, this can be replaced with any string of your choice.
 
-    4. We test the verify function after generating a Message Authentication Code. 
+    4. We test the verify function after generating a Message Authentication Code.  
+
+    5. The PrimeNumberGenerator uses the Miller-Rabin primality test to generate large primes. We have borrowed a portion of this code from various StackOverflow posts and combined it with some of our own to generate primes of the size that we need. 
+
 
 The logic for the algebraic MAC is contained in "AlgebraicMAC.py" and it has 3 primary functions: 
 
