@@ -5,13 +5,13 @@ How to run:
 
     1. Only two files are needed to run this MAC: "Main.py" and "AlgebraicMAC.py"
 
-    2. Value of the two prime p and q is hardcoded into the Main in line 7 and 8 and can be changed with any two primes generated from PrimeNumberGenerator
+    2. Value of the prime q is hardcoded into the Main in line 7 and can be changed with any prime generated from PrimeNumberGenerator
 
     3. m = "Hello World!" is the hardcoded strong we choose to MAC as an example, this can be replaced with any string of your choice.
 
     4. We test the verify function after generating a Message Authentication Code.  
 
-    5. The PrimeNumberGenerator uses the Miller-Rabin primality test to generate large primes. We have borrowed a portion of this code from various StackOverflow posts and combined it with some of our own to generate primes of the size that we need. 
+    5. The PrimeNumberGenerator uses the Miller-Rabin primality test to generate large primes. We have borrowed a portion of this code from various StackOverflow posts and combined it with some of our own to generate prime of the size that we need. Real crypto would use a much larger prime, but the quadratic residue group of such a prime would be stored locally. We are doing this every time we run the code and this is the bottleneck in our system but it allows us to test the logic for different prime numbers. This is the reason our code takes 14-16 seconds to compile and give an output. 
 
 
 The logic for the algebraic MAC is contained in "AlgebraicMAC.py" and it has 3 primary functions: 
